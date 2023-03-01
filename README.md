@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-* [Map](#-1-`map()` method)
+* [Map](#-1-`map()`-method)
 
 <br/>
 
