@@ -53,7 +53,8 @@ behindTheMap((num) => num * 2, originalArray);
 
 ## # 2. `filter()` method
 
-The Array.filter() method is a built-in function in javascript that takes a callbackback function and invoke it on each element of given array and if element passes the callback function it is added in new Array and then it is returned. 
+The Array.filter() method is a built-in function in javascript that takes a callbackback function and invoke it on each element of given array and if element passes the callback function it is added in new Array and then it is returned.
+
 The callback function must return boolean value (true or false), and only if it returns true, the element is added otherwise it is omitted and nothing happens.
 The callbackFunc function should return true if the current element should be included in the filtered array, and false if it should be excluded.
 
@@ -61,7 +62,7 @@ The callbackFunc function should return true if the current element should be in
 
 ```js
 let newArr = existingArr.filter(callbackFunction)
- the callback function that determines which elements to include in the filtered array
+ //*the callback function that determines which elements to include in the filtered array. *
 ```
 
 **Example:**
@@ -80,10 +81,10 @@ console.log(evenNumbers);
 
 ```js
 const behindTheFilter = (callbackFunc,arr) => {
+    let newArr = []
     for(let i=0; i<arr.length; i++){
-        callbackFunc(arr[i]) ? null : arr.splice(i, 1)
+        callbackFunc(arr[i]) ? newArr.push(arr[i]) : null
     }
-    let newArr = arr
     return newArr
 }
 ```
