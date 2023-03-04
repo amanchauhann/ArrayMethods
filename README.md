@@ -101,3 +101,51 @@ behindTheFilter(checkAdult, ages) //custom function
 // Output: [32, 33, 40]
 ```
 
+## # 3. `Slice()` method
+
+The Slice method is a built -in method in javascript, that accepts two index as parameter, 'starting index' and 'ending index'. It is a pure function i.e it does not mutate original arguements instead it creates new array.
+The new array it returns contains elements from 'starting index' that is passed till the 'ending index' and just to inform it includes the 'starting index' but excludes 'ending index'
+
+If no values are passed, the default values for 'starting index' is 0, while for 'ending index' is array.length, so if it is passed without any arguements it returns new Array with all elements of original array.
+If negatives values are passed, they are treated as offsets from the end of the array.
+
+**Syntax:**
+
+```js
+let newArr = arr.slice(startingIndex, endingIndex)
+ 
+```
+
+**Example:**
+
+```js
+const fruits = ['apple', 'banana', 'orange', 'kiwi', 'mango'];
+const citrus = fruits.slice(2, 4);
+
+console.log(citrus) 
+//output: ['orange', 'kiwi']
+```
+
+**Custom version:**
+
+```js
+const behindTheSlice = (arr, starting =0, ending=arr.length) => {
+    if(starting<0) arr.length+starting
+    if(ending<0) arr.length +ending
+    let newArr = [];
+    for(let i=starting; i<ending; i++){
+        newArr.push(arr[i])
+    }
+    return newArr;
+}
+```
+
+**Example:**
+
+```js
+const arr = [0, 1, 2, 3, 4, 5];
+const newArr = behindTheSlice(arr, -3, -1); 
+
+console.log(newArr)
+// output [3, 4]
+```
