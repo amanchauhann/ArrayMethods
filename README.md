@@ -150,7 +150,7 @@ console.log(newArr)
 // output [3, 4]
 ```
 
-## # 2. `push()` method
+## # 4. `push()` method
 
 The Array.push() method is a built in function that adds one or more than one elements at the end of the array, it modifies the original array. It take the original array, and elements to be added.
 
@@ -194,5 +194,48 @@ console.log(newLength);
 // 9
 console.log(arr); 
 // [1, 3, 5, 7, 9, 2, 4, 6, 8]
+```
+
+## # 5. `pop()` method
+
+The Array.push() method is a built in function that removes the last element of array. It modifies the original array.
+
+On called upon it returns the last element of the original array.
+
+**Syntax:**
+
+```js
+existingArr.pop()
+```
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.pop();
+//ouput: 6
+
+console.log(numbers); 
+// Output: [1,2,3,4,5]
+```
+
+**Custom version:**
+
+```js
+function behindThePop(arr) {
+    const lastElement = arr[arr.length-1]
+    arr.length = arr.length-1
+    return lastElement //returns the last element of the array
+}
+```
+
+**Example:**
+
+```js
+const arr = [1, 2, 3, 4, 5];
+behindThePop(arr);
+//output: 5
+
+console.log(arr); // [1, 2, 3, 4]
 ```
 
