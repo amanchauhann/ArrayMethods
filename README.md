@@ -149,3 +149,50 @@ const newArr = behindTheSlice(arr, -3, -1);
 console.log(newArr)
 // output [3, 4]
 ```
+
+## # 2. `push()` method
+
+The Array.push() method is a built in function that adds one or more than one elements at the end of the array, it modifies the original array. It take the original array, and elements to be added.
+
+On called upon it returns the new length of the modified array. While modifying the original array.
+
+**Syntax:**
+
+```js
+existingArr.push(elelmentsToBeAdded)
+```
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.push(7,8,9);
+
+console.log(numbers); 
+// Output: [1,2,3,4,5,6,7,8,9]
+```
+
+**Custom version:**
+
+```js
+function behindThePush(arr, ...elem){
+    const elements = [...elem];
+    for(let i = 0; i < elements.length; i++){
+        arr[arr.length] = elements[i];
+    }
+    return arr.length; // return the new length of the modified array
+}
+```
+
+**Example:**
+
+```js
+const arr = [1, 3, 5, 7, 9];
+const newLength = behindThePush(arr, 2, 4, 6, 8);
+
+console.log(newLength); 
+// 9
+console.log(arr); 
+// [1, 3, 5, 7, 9, 2, 4, 6, 8]
+```
+
