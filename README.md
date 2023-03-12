@@ -239,3 +239,49 @@ behindThePop(arr);
 console.log(arr); // [1, 2, 3, 4]
 ```
 
+## # 5. `shift()` method
+
+The Array.push() method is a built in function that removes the first element of array. It modifies the original array.
+
+On called upon it returns the first element of the original array.
+
+**Syntax:**
+
+```js
+existingArr.shift()
+```
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.shift();
+//ouput: 1
+
+console.log(numbers); 
+// Output: [2,3,4,5,6]
+```
+
+**Custom version:**
+
+```js
+const behindTheShift = arr => {
+        const firstElement = arr[0]
+        for(let i=0; i<arr.length-1; i++){
+            arr[i] = arr[i+1]
+        }
+        arr.length = arr.length-1
+        return firstElement //returns first element of array.
+}
+```
+
+**Example:**
+
+```js
+const arr = [1, 2, 3, 4, 5];
+behindTheShift(arr);
+//output: 1
+
+console.log(arr); // [2, 3, 4, 5]
+```
+
