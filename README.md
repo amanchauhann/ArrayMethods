@@ -408,8 +408,8 @@ console.log(numbers);
 
 ```js
 const behindTheSome = (arr, callBack) => {
-    for(let i=0; i<ar.length; i++){
-        if(!cb(ar[i]))
+    for(let i=0; i<arr.length; i++){
+        if(!cb(arr[i]))
             return false
     }
     return true
