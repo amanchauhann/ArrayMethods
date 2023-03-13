@@ -409,7 +409,7 @@ console.log(numbers);
 ```js
 const behindTheEvery = (arr, callBack) => {
     for(let i=0; i<arr.length; i++){
-        if(!cb(arr[i]))
+        if(!callBack(arr[i]))
             return false
     }
     return true
@@ -424,9 +424,9 @@ behindTheEvery(numbers, (num)=> num%2===0)
 
 //output: false
 ```
-## # 9. `some()` method
+## # 10. `some()` method
 
-The Array.() method is a built in function that is called upon a array, it gets implemented on each element of array, and if even one of the elements passes the test, it returns true else if not any of them passes test it returns false.
+The Array.some() method is a built in function that is called upon a array, it gets implemented on each element of array, and if even one of the elements passes the test, it returns true else if not any of them passes test it returns false.
 
 This method does not execute on empty elements of array. It does not change original array.
 
@@ -451,7 +451,6 @@ console.log(numbers);
 
 ```js
 const behindSome = (arr, callBack) => {
-    const newArr = [];
     for(let i=0; i<arr.length; i++){
         if(callBack(arr[i])) return true;
     }
