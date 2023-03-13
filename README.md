@@ -198,7 +198,7 @@ console.log(arr);
 
 ## # 5. `pop()` method
 
-The Array.push() method is a built in function that removes the last element of array. It modifies the original array.
+The Array.pop() method is a built in function that removes the last element of array. It modifies the original array.
 
 On called upon it returns the last element of the original array.
 
@@ -241,7 +241,7 @@ console.log(arr); // [1, 2, 3, 4]
 
 ## # 6. `shift()` method
 
-The Array.push() method is a built in function that removes the first element of array. It modifies the original array.
+The Array.shift() method is a built in function that removes the first element of array. It modifies the original array.
 
 On called upon it returns the first element of the original array.
 
