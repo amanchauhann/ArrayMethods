@@ -375,9 +375,52 @@ const behindInclude = (arr, val, index) => {
 **Example:**
 
 ```js
-const fruits = ["a", "b", "c", "d"];
-fruits.includes("a", 2);
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+behindInclude(fruits, "Pineapple")
 
 //output: false
 ```
 
+## # 9. `every()` method
+
+The Array.() method is a built in function that is called upon a array, it gets implemented on each element of array, and if all the elements passes the test, it returns true else if not even one passes the test, returns false.
+
+This method does not execute on empty elements of array. It does not change original array.
+
+**Syntax:**
+
+```js
+existingArr.every(callBack)
+```
+
+**Example:**
+
+```js
+const numbers = [2,4,6,8];
+numbers.every((num)=>num%2===0) ;
+//ouput: true
+
+console.log(numbers); 
+// Output: [2,4,6,8]; //array remains same
+```
+
+**Custom version:**
+
+```js
+const behindTheSome = (arr, callBack) => {
+    for(let i=0; i<ar.length; i++){
+        if(!cb(ar[i]))
+            return false
+    }
+    return true
+}
+```
+
+**Example:**
+
+```js
+const numbers = [2,4,6,8,9];
+behindTheSome(numbers, (num)=> num%2===0)
+
+//output: false
+```
