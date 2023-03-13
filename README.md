@@ -239,7 +239,7 @@ behindThePop(arr);
 console.log(arr); // [1, 2, 3, 4]
 ```
 
-## # 5. `shift()` method
+## # 6. `shift()` method
 
 The Array.push() method is a built in function that removes the first element of array. It modifies the original array.
 
@@ -285,3 +285,52 @@ behindTheShift(arr);
 console.log(arr); // [2, 3, 4, 5]
 ```
 
+## # 7. `findIndex()` method
+
+The Array.() method is a built in function that is called upon array and given a function. It returns the index of first element of array for which callback function returns true.
+
+ It should be noted that it doesn't work on empty arrays and if the any given array of elements doesn't pass through the function, it returns -1.
+It does not changes the original array in any manner.
+
+**Syntax:**
+
+```js
+existingArr.findIndex(callBackFunction)
+```
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.findIndex( (num)=> num>4 );
+//ouput: 3
+
+console.log(numbers); 
+// Output: [1, 2, 3, 4, 5, 6] //array remains same
+```
+
+**Custom version:**
+
+```js
+const behindFindIndex =  (arr, callBack) => {
+    for(let i=0; i<arr.length; i++){
+         if(callBack(arr[i])){
+             return i;
+             break
+         }
+    }
+    return -1
+}
+```
+
+**Example:**
+
+```js
+const arr = [1, 2, 3, 4, 5];
+behindFindIndex(arr, (num)=>num>=3)
+
+//output:2
+
+console.log(arr); 
+// [1, 2, 3, 4, 5];
+```
