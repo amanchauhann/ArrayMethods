@@ -334,3 +334,50 @@ behindFindIndex(arr, (num)=>num>=3)
 console.log(arr); 
 // [1, 2, 3, 4, 5];
 ```
+
+## # 8. `includes()` method
+
+The Array.() method is a built in function that is called upon array or a string. It checks if a given value is included in the given array or string.
+
+It returns true if it contains the specified value and false if it doesn't. If a second aguement is passed i.e. index, it starts searching from that specifc index.
+It should be noted that includes is case sensitive.
+
+**Syntax:**
+
+```js
+existingArr.includes(value)
+```
+
+**Example:**
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Mango");
+//ouput: true
+
+console.log(fruits); 
+// Output: ["Banana", "Orange", "Apple", "Mango"]; //array remains same
+```
+
+**Custom version:**
+
+```js
+const behindInclude = (arr, val, index) => {
+    for(let i=(index ? index : 0); i<arr.length; i++){
+         if(val === arr[i]){
+             return true
+         }
+}
+    return false
+}
+```
+
+**Example:**
+
+```js
+const fruits = ["a", "b", "c", "d"];
+fruits.includes("a", 2);
+
+//output: false
+```
+
