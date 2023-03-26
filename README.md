@@ -17,6 +17,7 @@
 * [Every](#-9-every()-method)
 * [Some](#-10-some()-method)
 * [Reduce](#-11-reduce()-method)
+* [Concat](#-12-concat()-method)
 
 <br/>
 
@@ -393,7 +394,7 @@ behindInclude(fruits, "Pineapple")
 
 ## # 9. `every()` method
 
-The Array.() method is a built in function that is called upon a array, it gets implemented on each element of array, and if all the elements passes the test, it returns true else if not even one passes the test, returns false.
+The Array.every() method is a built in function that is called upon a array, it gets implemented on each element of array, and if all the elements passes the test, it returns true else if not even one passes the test, returns false.
 
 This method does not execute on empty elements of array. It does not change original array.
 
@@ -434,6 +435,7 @@ behindTheEvery(numbers, (num)=> num%2===0)
 
 //output: false
 ```
+
 ## # 10. `some()` method
 
 The Array.some() method is a built in function that is called upon a array, it gets implemented on each element of array, and if even one of the elements passes the test, it returns true else if not any of them passes test it returns false.
@@ -530,4 +532,53 @@ const callBackFunc = (num) => num / 2;
 behindReduce(numbers, callBackFunc)
 
 //output: 75
+```
+
+## # 12. `concat()` method
+
+The Array.concat() method is a built in function that is called upon a array, it concats two or more arrays. It even concats strings as well.
+
+It does not change original array. It returns a new array containing joined arrays.
+
+**Syntax:**
+
+```js
+arr1.concat(arr2)
+```
+
+**Example:**
+
+```js
+const arr1 = [2,4,6,8];
+const arr2 = [1,3,5,7];
+arr1.concat(arr2) ;
+//ouput: [2,4,6,8,1,3,5,7]
+
+console.log(arr1); 
+console.log(arr2); 
+// Output: [2,4,6,8]; //array remains same
+//Output: [1,3,5,7] //array remains same
+```
+
+**Custom version:**
+
+```js
+const behindConcat = (a, b) => {
+    let result;
+    if(Array.isArray(a) && Array.isArray(b)){
+        result = [...a, ...b]
+        return result
+    } 
+    return a+b 
+}
+```
+
+**Example:**
+
+```js
+const arr1 = [2,4,6,8];
+const arr2 = [1,3,5,7];
+behindConcat(arr1, arr2)
+
+//output: [2,4,6,8,1,3,5,7]
 ```
