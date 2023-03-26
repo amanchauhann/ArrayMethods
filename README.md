@@ -18,6 +18,7 @@
 * [Some](#-10-some()-method)
 * [Reduce](#-11-reduce()-method)
 * [Concat](#-12-concat()-method)
+* [Join](#-13-join()-method)
 
 <br/>
 
@@ -581,4 +582,54 @@ const arr2 = [1,3,5,7];
 behindConcat(arr1, arr2)
 
 //output: [2,4,6,8,1,3,5,7]
+```
+
+## # 13. `join()` method
+
+The Array.join() method is a built in function that is called upon a array, it joins the elements of array with a default separator as comma(","), user can also decide the custom separator, the separator doesn't add up after the last element.
+
+It does not change original array. It returns string after joining.
+
+**Syntax:**
+
+```js
+arr1.join(separator)
+```
+
+**Example:**
+
+```js
+const arr1 = ["Banana", "Orange", "Apple", "Mango"];
+arr1.join("-") ;
+//ouput: "Banana-Orange-Apple-Mango"
+
+console.log(arr1); 
+// Output: ["Banana", "Orange", "Apple", "Mango"];  //array remains same
+```
+
+**Custom version:**
+
+```js
+const behindJoin = (arr, separator=",") => {
+    let result = "";
+    if(arr.length === 1) return result = arr[0];
+
+    for(let i=0; i<arr.length; i++){
+        if(i !== arr.length-1){
+            result += arr[i]+separator
+        }else{
+        result+= arr[i]
+        }
+    }
+    return result
+}
+```
+
+**Example:**
+
+```js
+const arr1 = ["Banana", "Orange", "Apple", "Mango"]
+behindJoin(arr1, "-")
+
+//output: "Banana-Orange-Apple-Mango"
 ```
