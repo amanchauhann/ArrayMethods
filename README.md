@@ -7,6 +7,16 @@
 ## Table of Contents
 
 * [Map](#-1-map()-method)
+* [Filter](#-2-filter()-method)
+* [Slice](#-3-slice()-method)
+* [Push](#-4-push()-method)
+* [Pop](#-5-pop()-method)
+* [Shift](#-6-shift()-method)
+* [findIndex](#-7-findIndex()-method)
+* [Includes](#-8-includes()-method)
+* [Every](#-9-every()-method)
+* [Some](#-10-some()-method)
+* [Reduce](#-11-reduce()-method)
 
 <br/>
 
@@ -467,3 +477,57 @@ behindSome(numbers, (num)=> num%2===0)
 //output: false
 ```
 
+## # 11. `reduce()` method
+
+The Array.reduce() method is a built in function that is called upon a array, it performs the given callback function on the array and returns a single value as result. It executes reducer function and returns single accumulated result.
+
+This method does not changes the original array. It does not exectute on empty array.
+
+**Syntax:**
+
+```js
+existingArr.reduce(callback)
+```
+
+**Example:**
+
+```js
+const numbers = [10, 20, 30, 40, 50];
+const callBackFunc = (num) => num / 2;
+numbers.reduce(callBackFunc) ;
+//ouput: 75
+
+console.log(numbers); 
+// Output: [10, 20, 30, 40, 50]; //array remains same
+```
+
+**Custom version:**
+
+```js
+const behindReduce = (arr, cb, acc) => {
+    if(!Array.isArray(arr)) return "please give valid array"        //checks if given "arr" is even array.
+    if(arr.length <=0) return "please give valid array length"      //handles "arr" with no elements as it does not exectute on empty array.
+    let i =0
+    
+    if(acc === undefined){
+        acc = arr[0]
+        i = 1
+    }
+let curr;
+    for(; i<arr.length; i++){
+        curr = arr[i]
+        acc += cb(curr)
+    }
+    return acc
+}
+```
+
+**Example:**
+
+```js
+const numbers = [10, 20, 30, 40, 50];
+const callBackFunc = (num) => num / 2;
+behindReduce(numbers, callBackFunc)
+
+//output: 75
+```
